@@ -9,7 +9,7 @@ import lombok.*;
 @Builder
 public class TennisGame {
     private int idGame = 0;
-    private Score score;
+    private Score score = new Score(0, 0);
     private TennisGameStatus status = TennisGameStatus.PLAY;
 
 }

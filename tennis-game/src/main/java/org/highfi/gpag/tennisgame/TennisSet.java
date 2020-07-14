@@ -17,19 +17,8 @@ public class TennisSet {
     private List<TennisGame> tennisGameList = new ArrayList<>();
     private boolean tieBreakActived = false;
 
-    public TennisGame initializeNewTennisGame() {
-        return TennisGame.builder()
-                .score(
-                        Score.builder()
-                                .scorePlayer1(0)
-                                .scorePlayer2(0)
-                                .build())
-                .status(TennisGameStatus.PLAY)
-                .build();
-    }
-
     public void startNewGame(){
-        this.tennisGameList.add(initializeNewTennisGame());
+        this.tennisGameList.add(new TennisGame());
     }
 
 
@@ -38,7 +27,7 @@ public class TennisSet {
         if (this.tennisGameList != null && !this.tennisGameList.isEmpty()) {
             return this.tennisGameList.get(tennisGameList.size() - 1);
         } else {
-            TennisGame tennisGame = initializeNewTennisGame();
+            TennisGame tennisGame = new TennisGame();
             tennisGameList.add(tennisGame);
             return tennisGame;
         }

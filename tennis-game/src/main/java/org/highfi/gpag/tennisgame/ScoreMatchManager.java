@@ -10,12 +10,7 @@ public class ScoreMatchManager {
     private ScoreSetManager scoreSetManager = new ScoreSetManager();
 
     public void start() {
-        tennisSet = TennisSet.builder()
-                .score(Score.builder().scorePlayer1(0).scorePlayer2(0).build())
-                .status(TennisSetStatus.PLAY)
-                .tieBreakActived(false)
-                .tennisGameList(new ArrayList<>())
-                .build();
+        tennisSet = new TennisSet();
     }
 
     private void display(String s) {
